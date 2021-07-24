@@ -42,21 +42,16 @@ namespace HackerRank.DataStructures.Arrays.LeftRotation
 
         public static List<int> RotateLeft(int d, List<int> arr)
         {
-            var result = new List<int>(arr);
+            // exist a mathematical operation to calculate the rotate position
+            var n = arr.Count;
+            var result = new int[n];
 
-            for (var i = 0; i < d; i++)
+            for (var i = 0; i < n; i++)
             {
-                // save the most left item
-                var mostLeft = result[0];
-                for (var index = 0; index < result.Count - 1; index++)
-                {
-                    result[index] = result[index + 1];
-                }
-
-                result[result.Count - 1] = mostLeft;
+                result[(i + n - d) % n] = arr[i];
             }
 
-            return result;
+            return new List<int>(result);
         }
 
     }

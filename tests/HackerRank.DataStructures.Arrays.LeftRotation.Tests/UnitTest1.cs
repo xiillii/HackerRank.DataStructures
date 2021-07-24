@@ -25,9 +25,8 @@ namespace HackerRank.DataStructures.Arrays.LeftRotation.Tests
             // arrange
             var limitSeconds = 3;
             var target = new List<int>();
-            var maxSize = 500000;
+            var maxSize = 50000;
             var watch = new System.Diagnostics.Stopwatch();
-            var greaterLimit = false;
             
             // act
             for (int i = 0; i < maxSize; i++)
@@ -41,13 +40,8 @@ namespace HackerRank.DataStructures.Arrays.LeftRotation.Tests
             watch.Stop();
             
             // assert
-
-            if (limitSeconds < watch.ElapsedMilliseconds / 1000.0)
-            {
-                greaterLimit = true;
-            }
-
-            Assert.False(greaterLimit);
+       
+            Assert.False(limitSeconds < watch.ElapsedMilliseconds / 1000.0);
 
         }
     }
