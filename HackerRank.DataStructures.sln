@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HackerRank.DataStructures.R
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HackerRank.DataStructures.HourGlassSum", "src\HackerRank.DataStructures.HourGlassSum\HackerRank.DataStructures.HourGlassSum.csproj", "{CA8FCE79-8A6A-40C5-A8A7-86ECDF026874}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HackerRank.DataStructures.HourGlassSum.Tests", "tests\HackerRank.DataStructures.HourGlassSum.Tests\HackerRank.DataStructures.HourGlassSum.Tests.csproj", "{6A620C0C-92AF-457E-B6FA-0F1B9D13AEDC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{CA8FCE79-8A6A-40C5-A8A7-86ECDF026874}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CA8FCE79-8A6A-40C5-A8A7-86ECDF026874}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CA8FCE79-8A6A-40C5-A8A7-86ECDF026874}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A620C0C-92AF-457E-B6FA-0F1B9D13AEDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A620C0C-92AF-457E-B6FA-0F1B9D13AEDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A620C0C-92AF-457E-B6FA-0F1B9D13AEDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A620C0C-92AF-457E-B6FA-0F1B9D13AEDC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -39,6 +45,7 @@ Global
 		{C40404AB-D6E0-4A0D-A84E-41506C86B2FB} = {5322EDA7-068C-4F1B-B869-D88F5F1EE734}
 		{6AFB093C-3AC3-4F16-A9A3-AC9A471438FE} = {91CDE6DD-E4CA-4F17-8213-82CDC662FA96}
 		{CA8FCE79-8A6A-40C5-A8A7-86ECDF026874} = {5322EDA7-068C-4F1B-B869-D88F5F1EE734}
+		{6A620C0C-92AF-457E-B6FA-0F1B9D13AEDC} = {91CDE6DD-E4CA-4F17-8213-82CDC662FA96}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {583C2BB7-7FB3-4C30-B015-C22F71EDE2F9}

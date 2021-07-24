@@ -11,14 +11,14 @@ namespace HackerRank.DataStructures.HourGlassSum
         {
             TextWriter textWriter = new StreamWriter(@System.Environment.GetEnvironmentVariable("OUTPUT_PATH"), true);
 
-            List<List<int>> arr = new List<List<int>>();
+            var arr = new List<List<int>>();
 
-            for (int i = 0; i < 6; i++)
+            for (var i = 0; i < 6; i++)
             {
                 arr.Add(Console.ReadLine().TrimEnd().Split(' ').ToList().Select(arrTemp => Convert.ToInt32(arrTemp)).ToList());
             }
 
-            int result = Result.HourglassSum(arr);
+            var result = Result.HourglassSum(arr);
 
             textWriter.WriteLine(result);
 
@@ -40,11 +40,21 @@ namespace HackerRank.DataStructures.HourGlassSum
         public static int HourglassSum(List<List<int>> arr)
         {
             var result = 0;
+            var row = new List<int>();
+            var arrSums = new List<List<int>>();
 
-            for (int i = 0; i < arr.Count - 2; i++)
+            for (var i = 0; i < arr.Count - 2; i++)
             {
-                
+                for (var j = 0; j < arr.Count - 2; j++)
+                {
+                    var sumValue = Result.SumHourGlass3x3(Result.Get3x3Array(arr, j, i));
+                    row.Add(sumValue);
+                }
+                arrSums.Add(row);
+                row = new List<int>();
             }
+
+            result = arrSums.Max(i => i.Max(r => r));
 
             return result;
         }
@@ -57,7 +67,7 @@ namespace HackerRank.DataStructures.HourGlassSum
         /// </summary>
         /// <param name="arr"></param>
         /// <returns></returns>
-        private static int SumHourGlass3x3(List<List<int>> arr)
+        public static int SumHourGlass3x3(List<List<int>> arr)
         {
             var result = 0;
 
@@ -68,10 +78,16 @@ namespace HackerRank.DataStructures.HourGlassSum
             return result;
         }
 
-        private static List<List<int>> Get3x3Array(List<List<int>> arr, int row, int col)
+        public static List<List<int>> Get3x3Array(List<List<int>> arr, int row, int col)
         {
+            var result = new List<List<int>>();
+            for (var i = row; i < row + 3; i++)
+            {
+                var nRow = new List<int>(new[] {arr[i][col], arr[i][col + 1], arr[i][col + 2]});
+                result.Add(nRow);
+            }
 
+            return result;
         }
-
     }
 }
