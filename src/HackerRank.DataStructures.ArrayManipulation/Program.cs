@@ -46,26 +46,33 @@ namespace HackerRank.DataStructures.ArrayManipulation
         public static long ArrayManipulation(int n, List<List<int>> queries)
         {
             var result = 0L;
-            var arr = new long[n];
-            var max = 0L;
+            var arr = new long[n + 2];
+            
             foreach (var query in queries)
             {
                 var a = query[0];
                 var b = query[1];
                 var k = query[2];
-                for (var i = a; i <= b; i++)
-                {
-                    arr[i - 1] += k;
-                    if (max < arr[i - 1])
-                    {
-                        max = arr[i - 1];
-                    }
-                }
+                arr[a] += k;
+                arr[b + 1] -= k;
             }
 
-            //result = arr.Max(i => i);
-            result = max;
+            result = GetMax(arr);
             return result;
+        }
+
+        private static long GetMax(long[] arr)
+        {
+            var max = long.MinValue;
+            long sum = 0;
+
+            foreach (var t in arr)
+            {
+                sum += t;
+                max = Math.Max(max, sum);
+            }
+
+            return max;
         }
     }
 }
